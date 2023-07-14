@@ -1,0 +1,180 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #EBF0F6;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hangman_container {
+    margin-top: 50px;
+}
+
+.hangman {
+    width: 250px;
+    height: 250px;
+    border-top: 5px solid #000;
+    border-left: 5px solid #000;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hangman::before {
+    content: '';
+    width: 5px;
+    height: 90px;
+    background-color: #000;
+    border-left: 2px solid #000;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    transform: rotate(52deg);
+}
+
+.hangman::after {
+    content: '';
+    width: 20px;
+    height: 5px;
+    background-color: #000;
+    border-left: 2px solid #000;
+    position: absolute;
+    top: 7px;
+    left: 125px;
+    transform: rotate(90deg);
+}
+
+.head {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    position: absolute;
+    top: 19px;
+    left: 110px;
+    display: none;
+}
+
+.body {
+    width: 3px;
+    height: 90px;
+    background-color: #000;
+    position: absolute;
+    left: 133px;
+    top: 68px;
+    display: none;
+}
+
+.left_hand {
+    width: 2px;
+    height: 50px;
+    background-color: #000;
+    position: absolute;
+    transform: rotate(35deg);
+    top: 80px;
+    left: 120px;
+    display: none;
+}
+
+.right_hand {
+    width: 2px;
+    height: 50px;
+    background-color: #000;
+    position: absolute;
+    transform: rotate(-35deg);
+    top: 82px;
+    left: 149px;
+    display: none;
+}
+
+.left_leg {
+    width: 3px;
+    height: 70px;
+    background-color: #000;
+    position: absolute;
+    transform: rotate(25deg);
+    top: 150px;
+    left: 118px;
+    display: none;
+}
+
+.right_leg {
+    width: 3px;
+    height: 70px;
+    background-color: #000;
+    position: absolute;
+    transform: rotate(-25deg);
+    top: 150px;
+    left: 148px;
+    display: none;
+}
+
+.display_feature {
+    display: block;
+}
+
+.word_container {
+    width: 250px;
+    margin: 85px auto;
+}
+
+.word {
+    display: flex;
+}
+
+.letter {
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    font-size: 27px;
+    text-align: center;
+    background-color: #ccc;
+    padding: 2px 15px;
+    border-bottom: 3px solid #000;
+    display: flex;
+    justify-content: center;
+}
+
+.correct_guess_color {
+    color: #fff;
+    background-color: #00C2CB;
+}
+
+.game_over {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.game_over_content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.game_over_content>p {
+    font-size: 2rem;
+    text-align: center;
+}
